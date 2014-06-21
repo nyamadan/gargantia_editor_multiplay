@@ -106,7 +106,7 @@ GameManager.prototype =
                         user.entity.destroy();
                         user.entity = null;
                     }
-                    that.users.splice(i, 0);
+                    that.users.splice(i, 1);
                     return;
                 }
             }
@@ -241,17 +241,6 @@ GameManager.prototype =
 
         this.gameLighting.initUI();
         this.gameController.initUI();
-    },
-
-    createFriend : function gameManagerCreateFriendFn(friendName, friendArchType, v3Location)
-    {
-        var entityFactory   =   this.getEntityFactory();
-
-        var v3LocationToUse  =  v3Location || this.getLevelStartLocation();
-
-        var newEntity   =   entityFactory.createActiveEntityInstance(friendName, friendArchType, v3LocationToUse);
-
-        return  newEntity;
     },
 
     createHero : function gameManagerCreateHeroFn(heroName, heroArchetype, v3Location)
@@ -1415,6 +1404,15 @@ GameManager.prototype =
         this.heroEntity = undefined;
         this.heroList   = [];
 
+        if(this.users != null) {
+            this.users.forEach(function(user){
+                if(user.entity != null) {
+                    user.entity.destroy();
+                    user.entity = null;
+                }
+            });
+        }
+
         this.gameSpaceList = [];
         this.gameSpaceTree = AABBTree.create(true);
         this.gameSpaceMap  = {};
@@ -1649,7 +1647,7 @@ GameManager.prototype =
             var user = this.users[i];
             var loc = null;
             if(user.entity == null) {
-                var entity = this.createFriend('Friend', 'a_ledo');
+                var entity = this.createHero('Friend', 'a_ledo');
                 loc = entity.getEC('ECLocomotion');
                 loc.reset();
                 loc.position = user.position;
