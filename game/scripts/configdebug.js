@@ -64,7 +64,7 @@ var Config =
     levelProgressionEndIndex : 100,
 
     //Editor
-    enableEditor : true,
+    enableEditor : false,
     editorScreenShotMode : false,
 
     //Mouse lock
