@@ -624,13 +624,13 @@ GameController.prototype =
         //     this.globals.graphicsDevice.fullscreen = !this.globals.graphicsDevice.fullscreen;
         // }
 
-        if (this.globals.enableEditor)
-        {
-            if (keyCode === keyCodes.RETURN)
-            {
-                gameManager.toggleEditor();
-            }
-        }
+//        if (this.globals.enableEditor)
+//        {
+//            if (keyCode === keyCodes.RETURN)
+//            {
+//                gameManager.toggleEditor();
+//            }
+//        }
 
         if (this.globals.profiling)
         {
