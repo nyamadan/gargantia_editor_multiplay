@@ -33,17 +33,17 @@ var Config =
 
     //Debugging.
     maxDebugLines : 16384,
-    cheats : true,
-    resetKey : true,
-    debugText : true,               //Needs to be enabled for the following things to work at all.
+    cheats : false,
+    resetKey : false,
+    debugText : false,               //Needs to be enabled for the following things to work at all.
     debugUpdate : false,            //Requires debugText.
     debugRender : false,            //Requires debugText.
     debugNav : false,               //Requires debugText.
     profiling : false,              // Forces cheats
-    debugEnableWireframe : true,    // Keeps copy of vertex data
+    debugEnableWireframe : false,    // Keeps copy of vertex data
     debugDrawGameSpaces : false,
-    debugSliders : true,
-    enableDynamicUI : true,
+    debugSliders : false,
+    enableDynamicUI : false,
     addArchetypeSliders : false,
     debugWebGL : false,
     debugDrawHoops : false,
